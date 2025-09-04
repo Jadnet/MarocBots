@@ -1,0 +1,17 @@
+name: My First Workflow
+
+on:
+  workflow_dispatch:    # للتشغيل اليدوي
+  push:                 # للتشغيل التلقائي عند رفع代码
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Print success message
+      run: echo "🎉 Workflow is working perfectly!"
